@@ -1,0 +1,3 @@
+"C:\Program Files\Eziriz\.NET Reactor\dotNET_Reactor.exe" -protectiontype app -showloadingscreen 1 -icon "$(ProjectDir)\wikto_logo.ico" -file "$(TargetDir)$(TargetFileName)"
+COPY /Y "$(TargetDir)$(TargetName)_Secure\$(TargetFileName)" "$(TargetDir)$(TargetFileName)"
+COPY /Y "$(TargetDir)$(TargetName)_Secure\$(TargetFileName)" "$(ProjectDir)\obj\$(ConfigurationName)\$(TargetFileName)"

@@ -1,0 +1,18 @@
+C:\Documents and Settings\frankieg\My Documents\SensePost Dev\Wikto2\wikto\bin\Debug\DotNetSkin.SkinControls.dll
+C:\Documents and Settings\frankieg\My Documents\SensePost Dev\Wikto2\wikto\bin\Debug\Org.Mentalis.Security.dll
+C:\Documents and Settings\frankieg\My Documents\SensePost Dev\Wikto2\wikto\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\frankieg\My Documents\SensePost Dev\Wikto2\wikto\obj\Debug\Wikto.csproj.GenerateResource.Cache
+C:\Documents and Settings\frankieg\Desktop\wikto\bin\Debug\DotNetSkin.SkinControls.dll
+C:\Documents and Settings\frankieg\Desktop\wikto\bin\Debug\Org.Mentalis.Security.dll
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\Wikto.csproj.GenerateResource.Cache
+C:\Documents and Settings\frankieg\Desktop\wikto\bin\Debug\wikto.exe.config
+C:\Documents and Settings\frankieg\Desktop\wikto\bin\Debug\wikto.exe
+C:\Documents and Settings\frankieg\Desktop\wikto\bin\Debug\wikto.pdb
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\SensePost.Wikto.EditItems.resources
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\SensePost.Wikto.News.resources
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\SensePost.Wikto.Properties.Resources.resources
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\SensePost.Wikto.frm_Wikto.resources
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\SensePost.Wikto.Wizard.resources
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\wikto.exe
+C:\Documents and Settings\frankieg\Desktop\wikto\obj\Debug\wikto.pdb

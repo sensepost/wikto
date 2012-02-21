@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:GoogleSearch" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="urn:GoogleSearch" name="GoogleSearch" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:GoogleSearch">
+      <s:complexType name="GoogleSearchResult">
+        <s:all>
+          <s:element name="documentFiltering" type="s:boolean" />
+          <s:element name="searchComments" type="s:string" />
+          <s:element name="estimatedTotalResultsCount" type="s:int" />
+          <s:element name="estimateIsExact" type="s:boolean" />
+          <s:element name="resultElements" type="s0:ResultElementArray" />
+          <s:element name="searchQuery" type="s:string" />
+          <s:element name="startIndex" type="s:int" />
+          <s:element name="endIndex" type="s:int" />
+          <s:element name="searchTips" type="s:string" />
+          <s:element name="directoryCategories" type="s0:DirectoryCategoryArray" />
+          <s:element name="searchTime" type="s:double" />
+        </s:all>
+      </s:complexType>
+      <s:complexType name="ResultElement">
+        <s:all>
+          <s:element name="summary" type="s:string" />
+          <s:element name="URL" type="s:string" />
+          <s:element name="snippet" type="s:string" />
+          <s:element name="title" type="s:string" />
+          <s:element name="cachedSize" type="s:string" />
+          <s:element name="relatedInformationPresent" type="s:boolean" />
+          <s:element name="hostName" type="s:string" />
+          <s:element name="directoryCategory" type="s0:DirectoryCategory" />
+          <s:element name="directoryTitle" type="s:string" />
+        </s:all>
+      </s:complexType>
+      <s:complexType name="ResultElementArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute d7p1:arrayType="s0:ResultElement[]" ref="soapenc:arrayType" xmlns:d7p1="http://schemas.xmlsoap.org/wsdl/" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DirectoryCategoryArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute d7p1:arrayType="s0:DirectoryCategory[]" ref="soapenc:arrayType" xmlns:d7p1="http://schemas.xmlsoap.org/wsdl/" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DirectoryCategory">
+        <s:all>
+          <s:element name="fullViewableName" type="s:string" />
+          <s:element name="specialEncoding" type="s:string" />
+        </s:all>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="doGetCachedPage">
+    <part name="key" type="s:string" />
+    <part name="url" type="s:string" />
+  </message>
+  <message name="doGetCachedPageResponse">
+    <part name="return" type="s:base64Binary" />
+  </message>
+  <message name="doSpellingSuggestion">
+    <part name="key" type="s:string" />
+    <part name="phrase" type="s:string" />
+  </message>
+  <message name="doSpellingSuggestionResponse">
+    <part name="return" type="s:string" />
+  </message>
+  <message name="doGoogleSearch">
+    <part name="key" type="s:string" />
+    <part name="q" type="s:string" />
+    <part name="start" type="s:int" />
+    <part name="maxResults" type="s:int" />
+    <part name="filter" type="s:boolean" />
+    <part name="restrict" type="s:string" />
+    <part name="safeSearch" type="s:boolean" />
+    <part name="lr" type="s:string" />
+    <part name="ie" type="s:string" />
+    <part name="oe" type="s:string" />
+  </message>
+  <message name="doGoogleSearchResponse">
+    <part name="return" type="s0:GoogleSearchResult" />
+  </message>
+  <portType name="GoogleSearchPort">
+    <operation name="doGetCachedPage">
+      <input message="s0:doGetCachedPage" />
+      <output message="s0:doGetCachedPageResponse" />
+    </operation>
+    <operation name="doSpellingSuggestion">
+      <input message="s0:doSpellingSuggestion" />
+      <output message="s0:doSpellingSuggestionResponse" />
+    </operation>
+    <operation name="doGoogleSearch">
+      <input message="s0:doGoogleSearch" />
+      <output message="s0:doGoogleSearchResponse" />
+    </operation>
+  </portType>
+  <binding name="GoogleSearchBinding" type="s0:GoogleSearchPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="doGetCachedPage">
+      <soap:operation soapAction="urn:GoogleSearchAction" />
+      <input>
+        <soap:body use="encoded" namespace="urn:GoogleSearch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:GoogleSearch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="doSpellingSuggestion">
+      <soap:operation soapAction="urn:GoogleSearchAction" />
+      <input>
+        <soap:body use="encoded" namespace="urn:GoogleSearch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:GoogleSearch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="doGoogleSearch">
+      <soap:operation soapAction="urn:GoogleSearchAction" />
+      <input>
+        <soap:body use="encoded" namespace="urn:GoogleSearch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:GoogleSearch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GoogleSearchService">
+    <port name="GoogleSearchPort" binding="s0:GoogleSearchBinding">
+      <soap:address location="http://api.google.com/search/beta2" />
+    </port>
+  </service>
+</definitions>

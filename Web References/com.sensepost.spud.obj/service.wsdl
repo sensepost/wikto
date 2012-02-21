@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetStructResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sz_q" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="n_s" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n_l" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="b_g" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStructResultResult" type="tns:StructuredResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StructuredResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResultStart" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultEnd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultTotal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultGoogleTotal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultLiveTotal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultYahooTotal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultQueryString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultItems" type="tns:ArrayOfStructuredResultElement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStructuredResultElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StructuredResultElement" nillable="true" type="tns:StructuredResultElement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StructuredResultElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCacheSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultSnippet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultSummary" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultErrorCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStructResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStructResult" />
+  </wsdl:message>
+  <wsdl:message name="GetStructResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStructResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetStructResult">
+      <wsdl:input message="tns:GetStructResultSoapIn" />
+      <wsdl:output message="tns:GetStructResultSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStructResult">
+      <soap:operation soapAction="http://tempuri.org/GetStructResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStructResult">
+      <soap12:operation soapAction="http://tempuri.org/GetStructResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://127.0.0.1:61532/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://127.0.0.1:61532/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
