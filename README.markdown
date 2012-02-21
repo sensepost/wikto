@@ -14,7 +14,7 @@ Wikto is Nikto for Windows - but with a couple of fancy extra features including
 
 #5. Requirements
 WinHTTrack (www.httrack.com)   
-HTTprint (www.net\-square.com)  
+HTTprint (www.net-square.com)  
 .Net Framework
 
 #6. Additional Resources 
