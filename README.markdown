@@ -17,6 +17,6 @@ WinHTTrack (www.httrack.com)
 HTTprint (www.net-square.com)  
 .Net Framework
 
-#6. Additional Resources 
-http://www.sensepost.com/cms/resources/labs/tools/pentest/wikto/using_wikto.pdf
+#6. Documentation
+https://github.com/sensepost/wikto/blob/master/Documentation/using_wikto.pdf
 
